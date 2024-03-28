@@ -3,6 +3,7 @@ class Counter{
     InterruptIn _interrupt;
     volatile uint16_t _count;
     volatile bool _updated;
+    //public에서 Interrupt 버튼 선언을 할때 callback을 이용해 불러내야하는 함수이기에 초기화 부분인 public 보다 앞서서 선언되어야 한다. 
     void isr(){
         _count++;
         _updated = 1;
